@@ -26,4 +26,12 @@ class ComentariosController extends Controller
         // Imprimir un mensaje de comentario guardado
         return back()->with('mensaje', 'Comentario publicado correctamente');
     }
+
+    public function delete($id)
+    {
+        //  para eliminar el comentario de la base de datos
+        comentarios::find($id)->delete();
+        
+        return redirect()->back()->with('success', 'Comentario eliminado correctamente');
+    }
 }

@@ -62,3 +62,8 @@ Route::get('/image/{id}', [ImagenController::class,'index'])->name('image.detail
 
 // Ruta de Publicar comentarios
 Route::post('/{user:username}/posts/{post}', [ComentariosController::class, 'store'])->name('comentarios.store');
+
+
+//ruta para eliminar comentario de un id
+Route::delete('/comentario/{id}', [ComentariosController::class, 'delete'])->name('comentario-delete');
+
